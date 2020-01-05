@@ -1,0 +1,59 @@
+{% load static %}
+{% load myfilters %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>SingUP</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	{% include "snippets/styles_baru.html" %}
+<!--===============================================================================================-->
+</head>
+<body>
+	{% include "snippets/navbar.html" %}
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100 row justify-content-center align-items-center">
+				<span class="login100-form-title">
+					Pilih Menu
+				</span>
+
+				<div class="container-login100-form-btn">
+					<a href="{% url 'karyawan:kdbooking' %}" type="submit" class="login100-form-btn">
+						Peminjaman Senjata
+					</a>
+				</div>
+
+				<div class="container-login100-form-btn">
+					<a href="{% url 'karyawan:kdpengembalian' %}" type="submit" class="login100-form-btn">
+						Pengembalian Senjata
+					</a>
+				</div>
+
+				<div class="container-login100-form-btn">
+					<a href="/admin/pinjam/senjata/add/" type="submit" class="login100-form-btn">
+						Tambah Senjata
+					</a>
+				</div>
+				
+
+				<div class="text-center p-t-12">
+
+				</div>
+
+				<div class="text-center p-t-136">
+
+				</div>
+			</div>
+		</div>
+	</div>
+		
+<!--===============================================================================================-->	
+	{% include "snippets/scripts_baru.html" %}
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+</body>
+</html>

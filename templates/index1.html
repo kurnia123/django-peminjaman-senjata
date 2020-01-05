@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+	Home Page
+{% endblock page_title %}
+
+{% block contents %}
+	
+	<h1>
+	<b>
+		Ini Home Page
+	</b>
+	</h1>
+
+	<a href="{% url 'pinjam:list_senjata' %}" class="btn btn-primary" >Pesan Senjata</a>
+	
+
+{% endblock contents %}

@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_title %}
+    Home Page
+{% endblock page_title %}
+
+<link rel="stylesheet" type="text/css" href="{% static "css/album.css" %}">
+
+{% block contents %}
+    <main role="main">
+      <div class="album py-5">
+          <div class="container">
+            {# ================ ROW ALBUM =============== #}
+            
+            {% if false == "ada" %}
+              <h1><b>{{data_booking.id_senjata.id_detail_senjata.tipe_senjata}}</b></h1>
+              <div class="row">
+                {# ========= album view ========= #}
+                <div class="col-md-4">
+                  <div class="card mb-4 box-shadow">
+                    <img class="card-img-top" src="{% static data_booking.id_senjata.link_image %}" alt="Card image cap">
+                    <div class="card-body">
+                      <h5><b>{{data_booking.id_senjata.nama_senjata}}</b></h5>
+                      <h7>id booking : {{data_booking.id_booking}}</h7>
+                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <a type="button" class="btn btn-sm btn-danger" href="{% url 'pinjam:deletebooking' data_booking.id_booking data_booking.id_penyewa.id_peminjaman %}">Batal Booking</a>
+                        </div>
+                        <b>Senjata Tersedia : {{data_booking.id_senjata.jumlah_tersedia}}</b>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {# =========================== #}
+              </div>
+              {# ============================================== #}
+            {% else %}
+               <h1><b>{{false}}</b></h1>
+            {% endif %}
+          </div>
+      </div>
+    </main>
+{% endblock contents %}
+
+{% block jsnya %}
+    
+{% endblock jsnya %}

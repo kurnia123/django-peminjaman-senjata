@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_title %}
+    Home Page
+{% endblock page_title %}
+
+<link rel="stylesheet" type="text/css" href="{% static "css/album.css" %}">
+
+{% block contents %}
+    <main role="main">
+      <div class="album py-5">
+          <div class="container">
+            {# ================ ROW ALBUM =============== #}
+            <h1><b>Sniper Rifle</b></h1>
+            <div class="row">
+              {% for list_data in Sniper_Rifle %}
+              {# ========= album view ========= #}
+              <div class="col-md-4">
+                <div class="card mb-4 box-shadow">
+                  <img class="card-img-top" src="{% static list_data.link_image %}" alt="Card image cap">
+                  <div class="card-body">
+                    <h5><b>{{list_data.nama_senjata}}</b></h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        <a type="button" class="btn btn-sm btn-outline-secondary" href="{% url 'pinjam:detail_senjata' list_data.id_senjata %}">View</a>
+                        <a type="button" class="btn btn-sm btn-primary" href="{% url 'pinjam:actionbooking' list_data.id_senjata %}">Booking</a>
+                      </div>
+                      <b>Senjata Tersedia : {{list_data.jumlah_tersedia}}</b>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+              {# =========================== #}
+            </div>
+            {# ============================================== #}
+            {# ================== ROW ALBUM ================= #}
+            <h1><b>Assault Rifle</b></h1>
+            <div class="row">
+              {% for list_data in Assault_Rifle %}
+              {# ========= album view ========= #}
+              <div class="col-md-4">
+                <div class="card mb-4 box-shadow">
+                  <img class="card-img-top" src="{% static list_data.link_image %}" alt="Card image cap">
+                  <div class="card-body">
+                    <h5><b>{{list_data.nama_senjata}}</b></h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        <a type="button" class="btn btn-sm btn-outline-secondary" href="{% url 'pinjam:detail_senjata' list_data.id_senjata %}">View</a>
+                        <a type="button" class="btn btn-sm btn-primary" href="{% url 'pinjam:actionbooking' list_data.id_senjata %}">Booking</a>
+                      </div>
+                      <b>Senjata Tersedia : {{list_data.jumlah_tersedia}}</b>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+              {# =========================== #}
+            </div>
+            {# ============================================== #}
+            {# ================== ROW ALBUM ================= #}
+            <h1><b>Shotgun</b></h1>
+            <div class="row">
+              {% for list_data in Shotgun %}
+              {# ========= album view ========= #}
+              <div class="col-md-4">
+                <div class="card mb-4 box-shadow">
+                  <img class="card-img-top" src="{% static list_data.link_image %}" alt="Card image cap">
+                  <div class="card-body">
+                    <h5><b>{{list_data.nama_senjata}}</b></h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        <a type="button" class="btn btn-sm btn-outline-secondary" href="{% url 'pinjam:detail_senjata' list_data.id_senjata %}">View</a>
+                        <a type="button" class="btn btn-sm btn-primary" href="{% url 'pinjam:actionbooking' list_data.id_senjata %}">Booking</a>
+                      </div>
+                      <b>Senjata Tersedia : {{list_data.jumlah_tersedia}}</b>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+              {# =========================== #}
+            </div>
+            {# ============================================== #}
+            {# ================== ROW ALBUM ================= #}
+            <h1><b>Machine Gun</b></h1>
+            <div class="row">
+              {% for list_data in Machine_Gun %}
+              {# ========= album view ========= #}
+              <div class="col-md-4">
+                <div class="card mb-4 box-shadow">
+                  <img class="card-img-top" src="{% static list_data.link_image %}" alt="Card image cap">
+                  <div class="card-body">
+                    <h5><b>{{list_data.nama_senjata}}</b></h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        <a type="button" class="btn btn-sm btn-outline-secondary" href="{% url 'pinjam:detail_senjata' list_data.id_senjata %}">View</a>
+                        <a type="button" class="btn btn-sm btn-primary" href="{% url 'pinjam:actionbooking' list_data.id_senjata %}">Booking</a>
+                      </div>
+                      <b>Senjata Tersedia : {{list_data.jumlah_tersedia}}</b>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+              {# =========================== #}
+            </div>
+            {# ============================================== #}
+          </div>
+      </div>
+    </main>
+{% endblock contents %}
+
+{% block jsnya %}
+    
+{% endblock jsnya %}

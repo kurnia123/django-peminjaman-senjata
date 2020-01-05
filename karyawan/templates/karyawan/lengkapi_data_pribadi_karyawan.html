@@ -1,0 +1,71 @@
+{% load static %}
+{% load myfilters %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>SingUP</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	{% include "snippets/styles_baru.html" %}
+<!--===============================================================================================-->
+</head>
+<body>
+	{% include "snippets/navbar.html" %}
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100 row justify-content-center align-items-center">
+				<form class="login100-form validate-form" method="POST">
+					{% csrf_token %}
+					
+					<span class="login100-form-title">
+						Lengkapi Data Pribadi Karyawan
+					</span>
+
+					{# id_peminjaman #}
+					<div class="wrap-input100 validate-input">
+						<input type="text" name="id_karyawan" maxlength="10" class="input100DP" placeholder="id username" required="" id="id_id_karyawan" value="{{iddata}}">
+					</div>
+					{# nama_peminjam #}
+					<div class="wrap-input100 validate-input">
+						<input type="text" name="nama_karyawan" maxlength="30" class="input100DP" placeholder="nama anda" required="" id="id_nama_karyawan" value="{{nama}}">
+					</div>
+					{# jenis kelmain #}
+					<div class="wrap-input100 validate-input">
+						{{karyawan_form.jenis_kelamin_karyawan|addclass:"classes=input100DP&place=jenis kelamin"}}
+					</div>
+					{# no_ktp #}
+					<div class="wrap-input100 validate-input">
+						{{karyawan_form.no_ktp_karyawan|addclass:"classes=input100DP&place=no ktp karyawan"}}
+					</div>
+					{# alamat_peminjam #}
+					<div class="wrap-input100 validate-input">
+						{{karyawan_form.alamat_karyawan|addclass:"classes=input100DP&place=alamat Karyawan"}}
+					</div>
+
+					<div class="container-login100-form-btn">
+						<button type="submit" class="login100-form-btn">
+							Login
+						</button>
+					</div>
+
+					<div class="text-center p-t-12">
+
+					</div>
+
+					<div class="text-center p-t-136">
+	
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+		
+<!--===============================================================================================-->	
+	{% include "snippets/scripts_baru.html" %}
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+</body>
+</html>

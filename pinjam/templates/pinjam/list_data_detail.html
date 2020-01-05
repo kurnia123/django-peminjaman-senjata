@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+	Detail Senjata
+{% endblock page_title %}
+
+{% block contents %}
+
+	<table>
+		<tr>
+			<td>id senjata</td>
+			<td> : </td>
+			<td>{{list_data_detail.id_senjata}}</td>
+		</tr>
+		<tr>
+			<td>nama senjata</td>
+			<td> : </td>
+			<td><b>{{list_data_detail.nama_senjata}}</b></td>
+		</tr>
+		<tr>
+			<td>tipe senjata</td>
+			<td> : </td>
+			<td>{{list_data_detail.id_detail_senjata.tipe_senjata}}</td>
+		</tr>
+		<tr>
+			<td>tipe peluru</td>
+			<td> : </td>
+			<td>{{list_data_detail.id_detail_senjata.tipe_peluru}}</td>
+		</tr>
+		<tr>
+			<td>nama produsen</td>
+			<td> : </td>
+			<td>{{list_data_detail.id_detail_senjata.nama_produsen.nama_produsen}}</td>
+		</tr>
+	</table>
+	<br>
+	 
+	<a type="button" class="btn btn-warning" href="{% url 'pinjam:list_senjata' %}" >Kembali</a>
+	<a type="button" class="btn btn-primary" href="{% url 'pinjam:actionbooking' list_data_detail.id_senjata %}">Booking</a>
+
+{% endblock contents %}

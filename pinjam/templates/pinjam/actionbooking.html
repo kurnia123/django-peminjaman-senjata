@@ -1,0 +1,72 @@
+{% load static %}
+{% load myfilters %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Pesan Senjata</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	{% include "snippets/styles_baru.html" %}
+<!--===============================================================================================-->
+</head>
+<body>
+	{% include "snippets/navbar.html" %}
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100 row justify-content-center align-items-center">
+				<span class="login100-form-title">
+					Pesan Senjata {{namaSenjata}}
+				</span>
+				<form class="login100-form validate-form" method="POST">
+					{% csrf_token %}
+					
+					{# booking #}
+					ID Booking
+					<div class="wrap-input100 validate-input">
+						<input type="text" name="id_booking" maxlength="10" class="input100DP" placeholder="id Booking" required="" id="id_id_booking" value="{{idbooking}}">
+					</div>
+					{# id_peminjaman #}
+					ID Peminjam
+					<div class="wrap-input100 validate-input">
+						<input type="text" name="id_id_penyewa" maxlength="50" class="input100DP" placeholder="id username" required="" id="id_id_id_penyewa" value="{{user.peminjam.id_peminjaman}}">
+					</div>
+					{# id_senjata #}
+					ID Senjata
+					<div class="wrap-input100 validate-input">
+						<input type="text" name="id_id_senjata" maxlength="50" class="input100DP" placeholder="id senjata" required="" id="id_id_id_senjata" value="{{idsenjata}}">
+					</div>
+
+
+					<div class="container-login100-form-btn">
+						<a href="/pinjam/" type="button" class="btn btn-danger">
+							Tidak
+						</a>
+						<button type="submit" class="btn btn-primary">
+							Pesan
+						</button>
+					</div>
+
+					<div class="text-center p-t-12">
+
+					</div>
+
+					<div class="text-center p-t-136">
+	
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+		
+<!--===============================================================================================-->	
+	{% include "snippets/scripts_baru.html" %}
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+</body>
+</html>
+
+
+
