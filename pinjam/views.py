@@ -239,20 +239,6 @@ def BooingViews(request,idpeminjam):
 
  
 
-@login_required(login_url='/pinjam/login/')
-def profileView(request,idpeminjam):
-	model = Peminjam
-	context = {
-		'page_title':'Profile',
-	}
-	
-	try:
-		profile = model.objects.get(id_peminjaman=idpeminjam)
-		context['list_profle'] = profile
-	except Exception as e:
-		redirect('/pinjam/')
-
-	return render(request,'pinjam/list_profile.html',context)
 
 
 

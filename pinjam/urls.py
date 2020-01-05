@@ -8,8 +8,7 @@ from .views import (loginView,
 	actionBooking,
 	BooingViews,
 	deleteBooking,
-	detailSenjataView,
-	profileView)
+	detailSenjataView,)
 
 app_name="pinjam"
 urlpatterns = [
@@ -22,6 +21,6 @@ urlpatterns = [
 	url(r'^complited/(?P<namapeminjam>[\w]+)',lengkapi_data_pribadi,name='complited'),
 	url(r'^bookingview/(?P<idpeminjam>[\w]+)',BooingViews,name='bookingview'),
 	url(r'^deletebooking/(?P<idbooking>[\w]+)/(?P<idpenyewa>[\w]+)/',deleteBooking,name='deletebooking'),
-	url(r'^profileView/(?P<idpeminjam>[\w]+)',profileView,name='profileView'),
 	url(r'^detailsenjata/(?P<idsenjata>[\w]+)',detailSenjataView,name='detail_senjata')
+
 ]
